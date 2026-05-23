@@ -18,7 +18,8 @@ body {
 }
 
 .box {
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
   background-color: white;
   padding: 35px;
   border-radius: 18px;
@@ -45,6 +46,7 @@ body {
   border: 2px solid #dcdcdc;
   border-radius: 10px;
   transition: 0.2s;
+  min-width: 0;
 }
 
 .inputArea input:focus {
@@ -61,6 +63,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
   transition: 0.2s;
+  flex-shrink: 0;
 }
 
 .inputArea button:hover {
@@ -130,4 +133,43 @@ body {
   color: #6b6b6b;
   opacity: 0.7;
   margin: 10px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  .box {
+    padding: 20px;
+  }
+
+  .box h1 {
+    font-size: 28px;
+  }
+
+  .inputArea {
+    flex-direction: column;
+  }
+
+  .inputArea button {
+    width: 100%;
+  }
+
+  .taskItem {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .removeBtn {
+    width: 100%;
+  }
+
+  .taskItem p {
+    font-size: 16px;
+  }
+
+  .emptyState {
+    font-size: 18px;
+  }
 }
