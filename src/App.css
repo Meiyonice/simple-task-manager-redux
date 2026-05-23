@@ -14,56 +14,59 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: clamp(12px, 3vw, 30px);
 }
 
 .box {
   width: 100%;
   max-width: 700px;
   background-color: white;
-  padding: 35px;
+  padding: clamp(18px, 4vw, 35px);
   border-radius: 18px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .box h1 {
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 40px;
+  margin-bottom: clamp(18px, 3vw, 30px);
+  font-size: clamp(26px, 5vw, 40px);
   color: #222;
 }
 
 .inputArea {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 12px;
 }
 
 .inputArea input {
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
   padding: 16px;
-  font-size: 17px;
+  font-size: clamp(14px, 2vw, 17px);
   border: 2px solid #dcdcdc;
   border-radius: 10px;
   transition: 0.2s;
-  min-width: 0;
+}
+
+.inputArea button {
+  flex: 0 0 120px;
+  width: 120px;
+  padding: 16px 0;
+  border: none;
+  background-color: #5f4bdb;
+  color: white;
+  font-size: clamp(14px, 2vw, 16px);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
 }
 
 .inputArea input:focus {
   outline: none;
   border-color: #5f4bdb;
-}
-
-.inputArea button {
-  padding: 16px 22px;
-  border: none;
-  background-color: #5f4bdb;
-  color: white;
-  font-size: 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.2s;
-  flex-shrink: 0;
 }
 
 .inputArea button:hover {
@@ -74,24 +77,25 @@ body {
 .message {
   color: crimson;
   margin-bottom: 20px;
-  font-size: 15px;
+  font-size: clamp(13px, 2vw, 15px);
   min-height: 18px;
   opacity: 0.9;
 }
 
 .taskList h2 {
   margin-bottom: 18px;
-  font-size: 28px;
+  font-size: clamp(20px, 3vw, 28px);
   color: #333;
 }
 
 .taskItem {
   background-color: #f7f7ff;
-  padding: 16px;
+  padding: clamp(12px, 3vw, 16px);
   margin-bottom: 14px;
   border-radius: 10px;
   border-left: 5px solid #5f4bdb;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   gap: 12px;
@@ -103,11 +107,10 @@ body {
 }
 
 .taskItem p {
-  font-size: 17px;
+  font-size: clamp(14px, 2vw, 17px);
   color: #333;
-  flex: 1;
+  flex: 1 1 200px;
   min-width: 0;
-  white-space: normal;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
@@ -120,7 +123,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: 0.2s;
-  flex-shrink: 0;
+  flex: 0 0 auto;
 }
 
 .removeBtn:hover {
@@ -129,47 +132,8 @@ body {
 
 .emptyState {
   text-align: center;
-  font-size: 22px;
+  font-size: clamp(16px, 3vw, 22px);
   color: #6b6b6b;
   opacity: 0.7;
   margin: 10px;
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 15px;
-  }
-
-  .box {
-    padding: 20px;
-  }
-
-  .box h1 {
-    font-size: 28px;
-  }
-
-  .inputArea {
-    flex-direction: column;
-  }
-
-  .inputArea button {
-    width: 100%;
-  }
-
-  .taskItem {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .removeBtn {
-    width: 100%;
-  }
-
-  .taskItem p {
-    font-size: 16px;
-  }
-
-  .emptyState {
-    font-size: 18px;
-  }
 }
