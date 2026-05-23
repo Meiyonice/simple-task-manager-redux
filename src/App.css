@@ -82,6 +82,7 @@ body {
   color: #333;
 }
 
+/* FIXED TASK ITEM */
 .taskItem {
   background-color: #f7f7ff;
   padding: 16px;
@@ -91,7 +92,8 @@ body {
 
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 12px;
 
   transition: 0.2s;
 }
@@ -103,6 +105,13 @@ body {
 .taskItem p {
   font-size: 17px;
   color: #333;
+
+  flex: 1;
+  min-width: 0;
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .removeBtn {
@@ -113,6 +122,8 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: 0.2s;
+
+  flex-shrink: 0;
 }
 
 .removeBtn:hover {
